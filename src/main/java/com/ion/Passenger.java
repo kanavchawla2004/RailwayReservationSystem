@@ -4,7 +4,10 @@ public class Passenger {
     public String name;
     public int age;
     public boolean isVip;
-    
+    public int tickets;
+    public void Passenger(){
+        System.out.println("object created");
+    }
     public String getName() {
         return name;
     }
@@ -22,6 +25,12 @@ public class Passenger {
     }
     public void setVip(boolean isVip) {
         this.isVip = isVip;
+    }
+    public int getTickets() {
+        return tickets;
+    }
+    public void setTickets(int tickets) {
+        this.tickets = tickets;
     }
     
 }
