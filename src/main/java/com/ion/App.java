@@ -5,6 +5,11 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Passenger kanavPassenger = new Passenger();
+        kanavPassenger.setAge(21);
+        kanavPassenger.setName("Kanav");
+        kanavPassenger.setVip(false);
+        // kanavPassenger.bookTicket("kanav",5);
+        BookingTicket.bookTicket(kanavPassenger.getName(), 5);
     }
 }
