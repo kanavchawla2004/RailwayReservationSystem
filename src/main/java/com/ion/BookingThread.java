@@ -1,6 +1,7 @@
 package com.ion;
 
 public class BookingThread extends Thread{
+    
     Passenger passenger;
     BookingTicket bookingTicket;
     int seatsToBeBooeked;
@@ -12,12 +13,7 @@ public class BookingThread extends Thread{
 
     @Override
     public void run(){
-        boolean success = bookingTicket.bookTicket(passenger.getName(), seatsToBeBooeked);
-        if(success){
-            System.out.println("Booked");
-        }else{
-            System.out.println("Not Booked");
-        }
+        bookingTicket.bookTicket(BookingTicket.normal,BookingTicket.vip,seatsToBeBooeked);
     }
     
 }
