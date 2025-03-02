@@ -1,4 +1,5 @@
 package com.ion;
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.LinkedList;
@@ -10,7 +11,8 @@ public class BookingTicket {
 //    public static Queue <Passenger> normal = new LinkedList<>();
 //    public static Queue <Passenger> vip = new LinkedList<>();
 
-    public static  PriorityQueue <Passenger> line = new PriorityQueue<>(new VipCompare());
+//    public static PriorityBlockingQueue<Passenger> line = new PriorityBlockingQueue<>(new VipCompare());
+    public static PriorityBlockingQueue<Passenger> line = new PriorityBlockingQueue<>(10, new VipCompare());
     static class VipCompare implements Comparator<Passenger> {
         @Override
         public int compare(Passenger passenger1,Passenger passenger2)
@@ -35,7 +37,7 @@ public class BookingTicket {
     public static int totalAvailableSeats = totalSeats - bookedSeats;
 
     public static Lock lock = new ReentrantLock();
-    public static void bookTicket(PriorityQueue <Passenger> line ){
+    public static void bookTicket(PriorityBlockingQueue <Passenger> line ){
         Passenger passenger = line.poll();
         int numOfTickets = passenger.getTickets();
         if(numOfTickets>0 && (totalAvailableSeats - numOfTickets >= 0)){
