@@ -13,7 +13,7 @@ public class BookingThread extends Thread{
 
     @Override
     public void run(){
-        bookingTicket.bookTicket(BookingTicket.normal,BookingTicket.vip,seatsToBeBooeked);
+        bookingTicket.bookTicket(BookingTicket.line);
     }
     
 }

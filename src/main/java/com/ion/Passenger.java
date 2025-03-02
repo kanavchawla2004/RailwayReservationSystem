@@ -3,6 +3,7 @@ package com.ion;
 public class Passenger {
     public String name;
     public int age;
+    public int id;
     public boolean isVip;
     public int tickets;
     public void Passenger(){
@@ -32,5 +33,12 @@ public class Passenger {
     public void setTickets(int tickets) {
         this.tickets = tickets;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
