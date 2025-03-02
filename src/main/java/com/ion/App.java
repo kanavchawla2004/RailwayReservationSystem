@@ -31,9 +31,9 @@ public class App {
         BookingTicket.populateQueue(anish);
 
 
-        BookingThread kanavThread = new BookingThread(kanavPassenger);
-        BookingThread kanaThread2 = new BookingThread(notPassenger);
-        BookingThread AnishThread =  new BookingThread(anish);
+        Thread kanavThread = new Thread(new BookingThread(kanavPassenger),kanavPassenger.getName());
+        Thread kanaThread2 = new Thread(new BookingThread(notPassenger),notPassenger.getName());
+        Thread AnishThread =  new Thread(new BookingThread(anish), anish.getName());
 
         kanavThread.start();
         kanaThread2.start();
